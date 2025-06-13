@@ -15,3 +15,23 @@ def parzyste_do(n):
 gen = parzyste_do(10)
 for x in gen:
     print(x)
+
+#####################################################
+#####################################################
+print()
+def czy_pierwsza(x):
+    if x < 2:
+        return False
+    for i in range(2, int(x ** 0.5)+1):
+        if x % i == 0:
+            return False
+    return True
+
+def liczby_pierwsze_do(n):
+    for liczba in range(2, n + 1):
+        if czy_pierwsza(liczba):
+            yield liczba
+
+for liczba in liczby_pierwsze_do(100):
+    print(liczba)
+    
